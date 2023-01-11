@@ -1,25 +1,14 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import Api from './services'
+
 import './App.css';
 
 function App() {
-
-  const Api = () => {
-    const [digimon, setDigimon] = useState([]);
-    useEffect(() => {
-      fetch('https://digimon-api.vercel.app/api/digimon')
-      .then((res) => res.json())
-      .then((data) => {
-        setDigimon(data);
-      });
-    });
-  }
-
-
   return (
     <div>
-      Olá mundo!
+      <Api/>
     </div>
-  );
+  )
 }
 
 export default App;
